@@ -1,0 +1,40 @@
+@import "tailwindcss";
+body{
+    font-family: "Crimson Text", serif;
+    background-color: #111;
+}
+
+*::selection{
+    background-color: #DEFD50;
+    color: #111;
+}
+
+body {
+  cursor: none;
+}
+
+.moveX{
+    animation-name: moveAnimation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+
+.moveLink{
+    opacity: 0;
+    transition: all ease 0.3s;
+}
+
+.link:hover .moveLink{
+    opacity: 1;
+}
+
+@keyframes moveAnimation {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
