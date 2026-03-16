@@ -12,12 +12,10 @@ const FullScreenNav = () => {
 
   const [navOpen, setnavOpen] = useContext(NavbarContext);
 
-  // 1. Setup the timeline once
   useGSAP(
     () => {
       tl.current = gsap.timeline({ paused: true });
 
-      // Match the display toggle
       tl.current.to(container.current, {
         display: "block",
         duration: 0,
@@ -31,7 +29,7 @@ const FullScreenNav = () => {
       });
 
       tl.current.from(
-        ".navLink", // Using your original class name
+        ".navLink", 
         {
           opacity: 0,
           y: 30,
@@ -47,7 +45,6 @@ const FullScreenNav = () => {
         stagger: { amount: 0.2 },
       }, "-=0.2");
 
-      // Infinite marquee (independent of the main timeline)
       gsap.to(".moveX", {
         xPercent: -100,
         repeat: -1,
@@ -58,7 +55,6 @@ const FullScreenNav = () => {
     { scope: container }
   );
 
-  // 2. Trigger play/reverse based on state
   useGSAP(() => {
     if (navOpen) {
       tl.current.play();
@@ -70,9 +66,7 @@ const FullScreenNav = () => {
     <div
       ref={container}
       style={{ display: "none" }}
-      className="text-white overflow-hidden h-screen w-full fixed top-0 left-0 z-50"
-    >
-      {/* Background Stairs - Restored original layout */}
+      className="text-white overflow-hidden h-screen w-full fixed top-0 left-0 z-50">
       <div className="h-screen w-full fixed top-0 left-0 flex pointer-events-none">
         <div className="stair h-full w-1/5 bg-[#000]"></div>
         <div className="stair h-full w-1/5 bg-black"></div>
@@ -80,8 +74,6 @@ const FullScreenNav = () => {
         <div className="stair h-full w-1/5 bg-black"></div>
         <div className="stair h-full w-1/5 bg-[#000]"></div>
       </div>
-
-      {/* Content - Restored original structure */}
       <div className="relative z-10">
         <div className="navLink flex w-full justify-between p-2 items-start">
           <div className="w-25">
@@ -101,7 +93,6 @@ const FullScreenNav = () => {
               <h1 className="text-[6.5vw] text-center leading-[0.8] pt-10 uppercase font-semibold">
                 Instagram
               </h1>
-              {/* Marquee effect on Hover - Restored original sizing */}
               <div className="moveLink absolute inset-0 text-black flex opacity-0 group-hover:opacity-100 transition-opacity bg-[#d3fd50]">
                 <div className="moveX flex items-center">
                   <h2 className="whitespace-nowrap text-[6.5vw] text-center leading-[0.8] pt-10 uppercase font-semibold">

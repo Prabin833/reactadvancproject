@@ -9,15 +9,8 @@ import CustomCursor from "./components/home/common/CustomCursor";
 const App = () => {
   return (
     <div>
-
-      {/* Custom Cursor */}
-      {/* <CustomCursor /> */}
-
-      {/* Navigation */}
       <Navbar />
       <FullScreenNav />
-
-      {/* Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/agence" element={<Agence />} />

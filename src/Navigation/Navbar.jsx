@@ -8,13 +8,11 @@ const Navbar = () => {
   const [navOpen, setnavOpen] = useContext(NavbarContext);
   const location = useLocation();
 
-  // change logo color depending on page
   const logoColor = location.pathname === "/project" ? "black" : "white";
 
   return (
     <div className="z-4 flex fixed top-0 w-full items-start justify-between">
 
-      {/* LOGO */}
       <div className="p-1">
         <div className="w-25">
           <svg
@@ -31,7 +29,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* MENU BUTTON */}
       <div
         onClick={() => setnavOpen(true)}
         onMouseEnter={() => {

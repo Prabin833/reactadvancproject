@@ -95,8 +95,6 @@ const Project = () => {
         </h2>
       </div>
 
-      {/* 🔥 2-column layout */}
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {projects.map((project) => (
           <div key={project.id} className="project-card">
